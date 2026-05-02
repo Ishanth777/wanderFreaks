@@ -3,13 +3,13 @@
 <br>
 <div class="auth-page">
        <h2>signup</h2>
-       <form method="POST" action="/signup" novalidate class="needs-validation">
+       <form method="POST" action="/signup" novalidate class="needs-validation" id="signupForm">
               <div class="mb-3">
                      <label class="form-label">Email</label>
-                     <input class="form-control" name="email" placeholder="email" required>
+                     <input class="form-control" id="email" name="email" type="email" placeholder="email" required>
 
                      <div class="invalid-feedback">
-                       Please enter your email.
+                       Please enter a valid email address.
                      </div>
               </div>
               <div class="mb-3">
@@ -30,7 +30,25 @@
               </div>
 
               <button type="submit">signup</button>
-             
-
        </form>
 </div>
+
+<script>
+document.getElementById("signupForm").addEventListener("submit", function(e) {
+  const form = this;
+  const emailInput = document.getElementById("email");
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!form.checkValidity() || !emailPattern.test(emailInput.value)) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    emailInput.classList.add("is-invalid");
+  } else {
+    emailInput.classList.remove("is-invalid");
+  }
+
+  form.classList.add("was-validated");
+});
+</script>
