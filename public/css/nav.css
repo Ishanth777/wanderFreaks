@@ -1,6 +1,8 @@
 /* Navbar - Ensuring relative positioning for the divider */
 .logo{
        text-align: center;
+       font-family: 'Pacifico', cursive;
+      font-size: 48px;
        color: #e31c5f;
        margin: 12px 0;
        padding: 0 12px;
