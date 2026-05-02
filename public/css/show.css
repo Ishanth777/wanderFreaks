@@ -1,0 +1,144 @@
+/* Container */
+.show-container {
+       max-width: 900px;
+       margin: 30px auto;
+       padding: 0 20px;
+     }
+     
+     /* Title */
+     .show-container h2 {
+       margin-bottom: 20px;
+       font-size: 26px;
+       color: #222;
+     }
+     
+     /* Card layout */
+     .show-card {
+       display: flex;
+       gap: 25px;
+       background: #fff;
+       padding: 20px;
+       border-radius: 12px;
+       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+       align-items: flex-start;
+     }
+     
+     /* Image */
+     .show-card img {
+       width: 320px;
+       height: 220px;
+       object-fit: cover;
+       border-radius: 10px;
+     }
+     
+     /* Details */
+     .show-details {
+       flex: 1;
+     }
+     
+     .show-details p {
+       margin: 10px 0;
+       color: #444;
+       line-height: 1.5;
+      overflow-wrap: anywhere;
+     }
+     
+     .show-details strong {
+       color: #000;
+     }
+     
+     /* Actions */
+     .actions {
+       margin-top: 20px;
+       display: flex;
+      flex-wrap: wrap;
+       gap: 12px;
+     }
+
+    .actions form {
+      margin: 0;
+    }
+     
+     /* Edit button (link style) */
+     .actions a {
+       text-decoration: none;
+       width: auto;
+       height: 40px;
+       padding: 10px 16px;
+       background: #007bff;
+       color: #fff;
+       border-radius: 6px;
+       font-size: 14px;
+       transition: background 0.2s;
+     }
+     
+     .actions a:hover {
+       background: #0056b3;
+     }
+     
+     /* Delete button */
+    .actions button {
+      min-width: 100px;
+      height: 40px;
+      padding: 0 16px;
+       background: #dc3545;
+      color: #fff;
+      border: 0;
+       border-radius: 6px;
+       font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+       cursor: pointer;
+       transition: background 0.2s;
+     }
+     
+     .actions button:hover {
+       background: #a71d2a;
+     }
+
+    .review-delete-btn {
+      min-width: 72px;
+      height: 32px;
+      padding: 0 10px;
+      margin-top: 8px;
+      border: 0;
+      border-radius: 5px;
+      background: #dc3545;
+      color: #fff;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .review-delete-btn:hover {
+      background: #a71d2a;
+    }
+     
+     /* Responsive (mobile) */
+     @media (max-width: 768px) {
+       .show-card {
+         flex-direction: column;
+       }
+     
+       .show-card img {
+         width: 100%;
+         height: 200px;
+       }
+
+      .show-container {
+        margin: 12px auto;
+        padding: 0 8px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .actions a,
+      .actions button {
+        width: 100%;
+      }
+     }
+
+    

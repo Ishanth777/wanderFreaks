@@ -1,0 +1,40 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="edit-page">
+<h2>Welcome to editing page</h2>
+
+<form method="POST" action="/listings/<%= editlisting._id %>?_method=PUT" novalidate class="needs-validation">
+
+  <div class="mb-3">
+    <input class="form-control" name="listing[title]" value="<%= editlisting.title %>" required>
+    <div class="invalid-feedback">Please enter a title.</div>
+  </div>
+
+  <div class="mb-3">
+    <textarea class="form-control" name="listing[description]" required><%= editlisting.description %></textarea>
+    <div class="invalid-feedback">Please enter a description.</div>
+  </div>
+
+  <div class="mb-3">
+    <input class="form-control" name="listing[price]" value="<%= editlisting.price %>" required>
+    <div class="invalid-feedback">Please enter a price.</div>
+  </div>
+
+  <div class="mb-3">
+    <input class="form-control" name="listing[location]" value="<%= editlisting.location %>" required>
+    <div class="invalid-feedback">Please enter a location.</div>
+  </div>
+
+  <div class="mb-3">
+    <input class="form-control" name="listing[country]" value="<%= editlisting.country %>" required>
+    <div class="invalid-feedback">Please enter a country.</div>
+  </div>
+
+  <div class="mb-3">
+    <input class="form-control" type="url" name="listing[image][url]" value="<%= editlisting.image?.url || '' %>">
+  </div>
+
+  <button class="btn btn-primary" type="submit">Edit</button>
+
+</form>
+</div>

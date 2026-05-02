@@ -1,0 +1,39 @@
+.create-page {
+  width: min(700px, 100%);
+  margin: 0 auto;
+}
+
+.create-page h2 {
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.create-page form {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.create-page .form-control,
+.create-page textarea {
+  font-size: 14px;
+}
+
+.create-page button[type="submit"] {
+  min-width: 120px;
+}
+
+@media (max-width: 600px) {
+  .create-page {
+    width: 100%;
+  }
+
+  .create-page form {
+    padding: 14px;
+  }
+
+  .create-page button[type="submit"] {
+    width: 100%;
+  }
+}

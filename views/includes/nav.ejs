@@ -1,0 +1,43 @@
+<h1 class="logo">WanderFreaks</h1>
+
+<div class="navbar">
+  <div class="nav-left">
+    <a href="/">Home</a>
+    <a href="/listings">Explore Places</a>
+    <a href="/listings/new">Add New Place</a>
+  </div>
+
+  
+
+  <form action="/listings/api/search" method="GET" class="nav-search-form">
+
+  <input 
+    type="text" 
+    name="query" 
+    placeholder="Search places..." 
+    class="nav-search-input"
+  >
+
+  <button 
+    type="submit" 
+    class="nav-search-btn"
+  >
+    Search
+  </button>
+
+</form>
+
+  <div class="nav-right">
+    <% if(!currUser){ %>
+      <a href="/login">Login</a>
+    <% } %>
+
+    <% if(currUser){ %>
+      <a href="/logout">Logout</a>
+      <a href="/display" class="username">
+        <%= currUser.username %>
+      </a>
+    <% } %>
+  </div>
+</div>
+

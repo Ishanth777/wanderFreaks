@@ -1,0 +1,28 @@
+.auth-page {
+  width: min(480px, 100%);
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.auth-page h2 {
+  text-align: center;
+  margin-bottom: 14px;
+  text-transform: capitalize;
+}
+
+.auth-page button[type="submit"] {
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #e31c5f;
+  color: #fff;
+}
+
+.auth-page p {
+  margin-top: 10px;
+  text-align: center;
+}

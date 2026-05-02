@@ -1,0 +1,98 @@
+<% layout("layouts/boilerplate")-%>
+
+<div class="show-container">
+
+  <h2><%= newlisting.title %></h2>
+
+  <div class="show-card">
+
+    <img src="<%= newlisting.image.url %>" alt="image">
+
+    <div class="show-details">
+      <p>owned by <i><%= newlisting.owner.username%></i></p>
+      <p><strong>Description:</strong> <%= newlisting.description %></p>
+      <p><strong>Price:</strong> ₹ <%= newlisting.price %></p>
+      <p><strong>Location:</strong> <%= newlisting.location %></p>
+      <p><strong>Country:</strong> <%= newlisting.country %></p>
+    </div>
+
+  </div>
+
+  <% if (currUser && currUser._id.equals(newlisting.owner._id)) { %>
+    <div class="actions">
+      <a id="btn" href="/listings/<%= newlisting._id %>/edit">Edit</a>
+  
+      <form method="POST" action="/listings/<%= newlisting._id %>/delete?_method=DELETE">
+        <button type="submit" class="listing-delete-btn">Delete</button>
+      </form>
+    </div>
+  <% } %>
+
+  
+
+</div>
+
+<!-- review form -->
+<div>
+  <% if(currUser){%>
+  <h4>Leave a Review</h4>
+
+  <form method="POST" action="/listings/<%= newlisting._id%>/reviews" novalidate class="needs-validation">
+    
+    <div class="mb-3">
+      <label for="rating" class="form-label">Rating</label>
+      <input type="range" min="1" max="5" value="3" name="review[rating]" class="form-range" id="rating" required>     
+
+      <div class="invalid-feedback">
+        Please select a valid rating.
+      </div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="comment" class="form-label">Comment</label>
+      <textarea class="form-control" name="review[comment]" id="comment" cols="30" rows="5" required></textarea>
+
+      <div class="invalid-feedback">
+        Please enter a comment.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <%}%>
+  <br>
+
+  <!-- display all reviews -->
+  <% if (newlisting.reviews.length) { %>
+    <h4 style="margin-bottom: 15px;">Reviews</h4>
+  
+    <% for (let review of newlisting.reviews) { %>
+      <div style="border:1px solid #ddd; padding:12px; margin-bottom:12px; border-radius:8px; background-color:#f9f9f9;">
+        
+        <div style="margin-bottom:6px;">
+          <p>created by <%= review.author.username %></p>
+          <strong>Rating:</strong> 
+          <span style="color:#f39c12; font-weight:bold;">
+            <%= review.rating %> ⭐
+          </span>
+        </div>
+        
+        <div>
+          <strong>Comment:</strong>
+          <p style="margin:5px 0 0 0; color:#333;">
+            <%= review.comment %>
+          </p>
+        </div>
+  
+        <% if (currUser && review.author._id.toString() === currUser._id.toString()) { %>
+          <form method="POST" action="/listings/<%= newlisting._id %>/reviews/<%= review._id %>?_method=DELETE">
+            <button type="submit" class="review-delete-btn">
+              Delete
+            </button>
+          </form>
+        <% } %>
+  
+      </div>
+    <% } %>
+  <% } %>
+</div>

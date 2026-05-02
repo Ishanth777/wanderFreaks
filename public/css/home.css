@@ -1,0 +1,57 @@
+/* Reset some default styles */
+body {
+       margin: 0;
+       padding: 0;
+       font-family: Arial, sans-serif;
+   
+       /* Background image */
+       background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+   
+       /* Center content */
+       height: 100vh;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+   
+       color: white;
+       text-align: center;
+   }
+   
+   /* Title styling */
+   h2 {
+       font-size: 3rem;
+       margin-bottom: 20px;
+   }
+   
+   /* Link styling */
+   a {
+       text-decoration: none;
+       font-size: 1.2rem;
+       color: white;
+       background: rgba(0, 0, 0, 0.6);
+       padding: 10px 20px;
+       border-radius: 5px;
+       transition: 0.3s;
+   }
+   
+   /* Hover effect */
+   a:hover {
+       background: rgba(255, 255, 255, 0.8);
+       color: black;
+  }
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 2rem;
+    padding: 0 12px;
+  }
+
+  a {
+    font-size: 1rem;
+    padding: 10px 14px;
+  }
+}

@@ -1,0 +1,35 @@
+.edit-page {
+  width: min(700px, 100%);
+  margin: 0 auto;
+}
+
+.edit-page h2 {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.edit-page form {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.edit-page .form-control,
+.edit-page textarea {
+  font-size: 14px;
+}
+
+.edit-page button[type="submit"] {
+  min-width: 120px;
+}
+
+@media (max-width: 600px) {
+  .edit-page form {
+    padding: 14px;
+  }
+
+  .edit-page button[type="submit"] {
+    width: 100%;
+  }
+}

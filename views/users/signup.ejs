@@ -1,0 +1,36 @@
+<% layout("layouts/boilerplate") -%>
+<br>
+<br>
+<div class="auth-page">
+       <h2>signup</h2>
+       <form method="POST" action="/signup" novalidate class="needs-validation">
+              <div class="mb-3">
+                     <label class="form-label">Email</label>
+                     <input class="form-control" name="email" placeholder="email" required>
+
+                     <div class="invalid-feedback">
+                       Please enter your email.
+                     </div>
+              </div>
+              <div class="mb-3">
+                     <label class="form-label">Username</label>
+                     <input class="form-control" name="username" placeholder="username" required>
+
+                     <div class="invalid-feedback">
+                       Please enter your username.
+                     </div>
+              </div>
+              <div class="mb-3">
+                     <label class="form-label">Password</label>
+                     <input class="form-control" name="password" placeholder="password" type="password" required>
+
+                     <div class="invalid-feedback">
+                       Please enter password.
+                     </div>
+              </div>
+
+              <button type="submit">signup</button>
+             
+
+       </form>
+</div>

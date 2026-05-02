@@ -1,0 +1,22 @@
+.profile-card {
+  width: min(520px, 100%);
+  margin: 18px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.profile-icon {
+  color: #e31c5f;
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  margin: 8px 0;
+}
+
+.profile-info span {
+  font-weight: 700;
+}
